@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomRightRadius="@dimen/space_15" android:bottomLeftRadius="@dimen/space_15"/><!-- 设置圆角半径 -->
+            <solid android:color="#F8F8F8" /><!--gray_btn_bg_color-->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomRightRadius="@dimen/space_15" android:bottomLeftRadius="@dimen/space_15"/><!-- 设置圆角半径 -->
+            <solid android:color="#F8F8F8" />
+        </shape>
+    </item>
+</selector>

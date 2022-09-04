@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+        <variable
+            name="activity"
+            type="com.example.nuanxin_kotlin.LoginActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F7F8FF"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_20"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/backOneLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{activity::onclick}"
+                android:paddingVertical="@dimen/space_20"
+                android:paddingRight="@dimen/space_40"
+                android:src="@mipmap/back_black_bg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_50"
+                android:text="账号登录"
+                android:textColor="#7A7A7A"
+                android:textSize="30sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_30">
+
+                <com.example.nuanxin_kotlin.view.ClearEditText
+                    android:id="@+id/ed_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_toLeftOf="@+id/getVerificationCode"
+                    android:background="@null"
+                    android:digits="0123456789"
+                    android:hint="请输入手机号"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingLeft="@dimen/space_5"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/color_33333"
+                    android:textSize="@dimen/text_14" />
+
+                <Button
+                    android:id="@+id/getVerificationCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@null"
+                    android:onClick="@{activity::onclick}"
+                    android:text="获取验证码"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_color"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50">
+
+                <com.example.nuanxin_kotlin.view.ClearEditText
+                    android:id="@+id/ed_verCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:background="@null"
+                    android:hint="请输入验证码"
+                    android:paddingLeft="@dimen/space_5"
+                    android:singleLine="true"
+                    android:textColor="@color/color_33333"
+                    android:textSize="@dimen/text_14" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_color"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50">
+
+                <com.example.nuanxin_kotlin.view.ClearEditText
+                    android:id="@+id/edit_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_50"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_toLeftOf="@+id/img_isHide"
+                    android:background="@null"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:paddingLeft="@dimen/space_5"
+                    android:singleLine="true"
+                    android:textColor="@color/color_33333"
+                    android:textSize="@dimen/text_14" />
+
+                <ImageView
+                    android:id="@+id/img_isHide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="@{activity::onclick}"
+                    android:src="@mipmap/hidden" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_color"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="@{activity::onclick}"
+                    android:paddingVertical="@dimen/space_15"
+                    android:text="@string/register"
+                    android:textColor="@color/theme_color"
+                    android:textSize="@dimen/text_14" />
+
+
+                <TextView
+                    android:id="@+id/tv_forget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="right"
+                    android:onClick="@{activity::onclick}"
+                    android:paddingVertical="@dimen/space_15"
+                    android:text="@string/forgetpwd"
+                    android:textColor="@color/theme_color"
+                    android:textSize="@dimen/text_14" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_enable_bg"
+                android:onClick="@{activity::onclick}"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_50"
+                android:layout_marginTop="15dp">
+
+                <CheckBox
+                    android:id="@+id/check_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/TvAgreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_5"
+                    android:text=""
+                    android:textColor="#999999"
+                    android:textSize="@dimen/text_14"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_log"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"/>-->
+    </RelativeLayout>
+</layout>

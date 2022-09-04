@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--第一层阴影-->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFF2F2"/>
+            <corners android:radius="@dimen/space_12" />
+        </shape>
+    </item>
+    <!--第二层前景-->
+    <item
+        android:bottom="4dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white"/>
+            <corners android:radius="@dimen/space_12" />
+        </shape>
+    </item>
+</layer-list>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.example.nuanxin_kotlin.MainActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".app.activity.MainActivity">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lin_bottom" />
+
+        <View
+            android:id="@+id/lin_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/bottom"
+            android:background="#f9f9f9"></View>
+
+        <RadioGroup
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_50"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/space_3">
+
+            <RadioButton
+                android:id="@+id/homeView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/nav_bottom_home_selector"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:text="首页"
+                android:textColor="@drawable/nav_bottom_text_color"
+                android:textSize="@dimen/text_14" />
+
+            <RadioButton
+                android:id="@+id/familyView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/nav_bottom_scene_selector"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:text="家庭圈"
+                android:textColor="@drawable/nav_bottom_text_color"
+                android:textSize="@dimen/text_14"  />
+
+
+            <RadioButton
+                android:id="@+id/myView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/nav_bottom_my_selector"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:text="我的"
+                android:textColor="@drawable/nav_bottom_text_color"
+                android:textSize="@dimen/text_14" />
+        </RadioGroup>
+    </RelativeLayout>
+</layout>

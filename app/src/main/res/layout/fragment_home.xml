@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.example.nuanxin_kotlin.fragment.HomeFragment" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_f8f8f8"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/space_30">
+
+            <LinearLayout
+                android:id="@+id/lin_top"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_marginHorizontal="@dimen/space_15"
+                android:layout_marginTop="@dimen/space_15"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="暖心家园"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_16"></TextView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/space_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_radius_bg"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/space_5">
+
+                    <ImageView
+                        android:layout_width="@dimen/space_20"
+                        android:layout_height="@dimen/space_20"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/icon_sign"></ImageView>
+
+                    <View
+                        android:layout_width="@dimen/space_1"
+                        android:layout_height="@dimen/space_20"
+                        android:layout_marginHorizontal="@dimen/space_5"
+                        android:background="@color/color_666666"></View>
+
+                    <ImageView
+                        android:layout_width="@dimen/space_14"
+                        android:layout_height="@dimen/space_14"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/icon_search_gray"></ImageView>
+
+                    <TextView
+                        android:id="@+id/searchEt"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/space_8"
+                        android:layout_weight="1"
+                        android:background="@null"
+
+                        android:textSize="@dimen/text_14"></TextView>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/member_change"
+                    android:layout_width="@dimen/space_20"
+                    android:layout_height="@dimen/space_20"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/member_change_bg"></ImageView>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/space_20">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="115dp"
+                        android:background="@drawable/home_top_bj"></ImageView>
+
+                    <com.zhpan.bannerview.BannerViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:layout_marginHorizontal="@dimen/space_15"
+                        ></com.zhpan.bannerview.BannerViewPager>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/viewpager"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/space_15">
+
+                        <!--家中视频-->
+                        <LinearLayout
+                            android:id="@+id/rl_camera"
+                            android:onClick="@{fragment::onClick}"
+                            style="@style/home_fun_item_rl"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_health_tip"
+                                style="@style/home_fun_item_tip_rl">
+
+                                <TextView
+                                    style="@style/home_fun_item_tip_tv"
+                                    android:text="@string/video_home"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:drawableRight="@mipmap/icon_array_gray_small"
+                                    android:drawablePadding="@dimen/space_3"
+                                    android:text="查看更多"
+                                    android:textColor="@color/color_99999"
+                                    android:textSize="@dimen/space_14" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                >
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/space_170"
+                                    android:layout_marginTop="@dimen/space_10"
+                                    android:layout_marginRight="@dimen/space_15"
+                                    android:scaleType="fitXY"
+                                    android:src="@mipmap/icon_video_bj"></ImageView>
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:src="@mipmap/icon_play_white"></ImageView>
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <!--危险告警-->
+                        <RelativeLayout
+                            android:id="@+id/remind_root"
+                            style="@style/home_fun_item_rl"
+                            android:onClick="@{fragment::onClick}">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_danger_tip"
+                                style="@style/home_fun_item_tip_rl"
+                                android:paddingBottom="@dimen/space_12">
+
+                                <TextView
+                                    style="@style/home_fun_item_tip_tv"
+                                    android:layout_centerVertical="true"
+                                    android:text="危险告警"
+                                    android:textColor="@color/black" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerVertical="true"
+                                    android:drawableRight="@mipmap/icon_array_gray_small"
+                                    android:drawablePadding="@dimen/space_3"
+                                    android:gravity="center"
+                                    android:text="查看更多"
+                                    android:textColor="@color/color_99999"
+                                    android:textSize="@dimen/space_14" />
+
+                            </RelativeLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:onClick="@{fragment::onClick}"
+                                android:id="@+id/recyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rl_danger_tip"
+                                android:layout_marginRight="@dimen/space_15"
+                                android:background="@drawable/white_bg_stroke"
+                                android:minHeight="@dimen/space_50"
+                                android:paddingHorizontal="@dimen/space_15">
+
+                            </androidx.recyclerview.widget.RecyclerView>
+
+                        </RelativeLayout>
+
+                        <!--父母位置-->
+                        <RelativeLayout style="@style/home_fun_item_rl">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_commonly_tip"
+                                style="@style/home_fun_item_tip_rl"
+                                android:onClick="@{fragment::onClick}">
+
+                                <TextView
+                                    style="@style/home_fun_item_tip_tv"
+                                    android:text="@string/location_mother"
+                                    android:textColor="@color/black" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_commonly_tip"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+
+                                    android:orientation="horizontal">
+
+                                    <RelativeLayout
+                                        android:id="@+id/parent_location"
+                                        style="@style/home_fun_item_location_number"
+                                        android:onClick="@{fragment::onClick}">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="父母行踪"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/space_18"></TextView>
+
+                                        <TextView
+                                            android:layout_width="@dimen/space_88"
+                                            android:layout_height="@dimen/space_20"
+                                            android:layout_alignParentBottom="true"
+                                            android:background="@mipmap/icon_orangereact_bg"
+                                            android:drawableLeft="@mipmap/icon_loucs_small"
+                                            android:drawablePadding="@dimen/space_8"
+                                            android:gravity="center_vertical"
+                                            android:paddingLeft="@dimen/space_8"
+                                            android:text="串联轨迹"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/space_12"></TextView>
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_69"
+                                            android:layout_height="@dimen/space_69"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_alignParentBottom="true"
+                                            android:src="@mipmap/icon_parentloucs"></ImageView>
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:src="@mipmap/icon_array_right_black"></ImageView>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/safe_fence"
+                                        style="@style/home_fun_item_location_number"
+                                        android:onClick="@{fragment::onClick}">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="安全围栏"
+                                            android:textColor="@color/black"
+                                            android:textSize="@dimen/space_18"></TextView>
+
+                                        <TextView
+                                            android:layout_width="@dimen/space_54"
+                                            android:layout_height="@dimen/space_20"
+                                            android:layout_alignParentBottom="true"
+                                            android:background="@mipmap/icon_bluereact_bg"
+                                            android:drawableLeft="@mipmap/icon_stoke_small"
+                                            android:drawablePadding="@dimen/space_8"
+                                            android:gravity="center_vertical"
+                                            android:paddingLeft="@dimen/space_8"
+                                            android:text="安全"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/space_12"></TextView>
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_69"
+                                            android:layout_height="@dimen/space_69"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_alignParentBottom="true"
+                                            android:src="@mipmap/icon_stock_home"></ImageView>
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:src="@mipmap/icon_array_right_black"></ImageView>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                        <!--健康信息-->
+                        <RelativeLayout style="@style/home_fun_item_rl">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_service_tip"
+                                style="@style/home_fun_item_tip_rl">
+
+                                <TextView
+                                    style="@style/home_fun_item_tip_tv"
+                                    android:text="@string/health_msg"
+                                    android:textColor="@color/black" />
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:drawableRight="@mipmap/icon_array_gray_small"
+                                    android:drawablePadding="@dimen/space_3"
+                                    android:gravity="center"
+                                    android:text="查看更多"
+                                    android:textColor="@color/color_99999"
+                                    android:textSize="@dimen/space_14"
+                                    android:visibility="gone" />
+
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rl_service_tip"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/re_step"
+                                        style="@style/home_fun_item_location"
+                                        android:onClick="@{fragment::onClick}"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:drawableLeft="@mipmap/icon_stepnum_home"
+                                            android:drawablePadding="@dimen/space_10"
+                                            android:text="步数"
+                                            android:textSize="@dimen/text_18"
+                                            android:textStyle="bold"></TextView>
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_100"
+                                            android:layout_height="@dimen/space_35"
+                                            android:layout_gravity="center"
+                                            android:src="@mipmap/icon_stepnumi_home"></ImageView>
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_10">
+
+                                            <TextView
+                                                android:id="@+id/step_num_tv"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:text="--"
+                                                android:textColor="@color/color_332A7C"
+                                                android:textSize="@dimen/text_24"></TextView>
+
+                                            <TextView
+                                                android:id="@+id/step_num"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignBottom="@id/step_num_tv"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginLeft="@dimen/space_8"
+                                                android:layout_toRightOf="@id/step_num_tv"
+                                                android:text="步"
+                                                android:textColor="@color/black"
+                                                android:textSize="@dimen/text_14"></TextView>
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/re_blood"
+                                        style="@style/home_fun_item_location"
+                                        android:onClick="@{fragment::onClick}"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:drawableLeft="@mipmap/icon_bloodgreen_home"
+                                            android:drawablePadding="@dimen/space_10"
+                                            android:text="血压"
+                                            android:textSize="@dimen/text_18"
+                                            android:textStyle="bold"></TextView>
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_100"
+                                            android:layout_height="@dimen/space_35"
+                                            android:layout_gravity="center"
+                                            android:src="@mipmap/icon_bloodnum_home"></ImageView>
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_10">
+
+                                            <TextView
+                                                android:id="@+id/blood_num_tv"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:text="--/--"
+                                                android:textColor="@color/color_332A7C"
+                                                android:textSize="@dimen/text_24"></TextView>
+
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/re_heart"
+                                        style="@style/home_fun_item_location"
+                                        android:onClick="@{fragment::onClick}"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:drawableLeft="@mipmap/icon_rate_home"
+                                            android:drawablePadding="@dimen/space_10"
+                                            android:text="心率"
+                                            android:textSize="@dimen/text_18"
+                                            android:textStyle="bold"></TextView>
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_100"
+                                            android:layout_height="@dimen/space_35"
+                                            android:layout_gravity="center"
+                                            android:src="@mipmap/icon_heartnum_home"></ImageView>
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_10">
+
+                                            <TextView
+                                                android:id="@+id/rate_num_tv"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_centerVertical="true"
+                                                android:text="--"
+                                                android:textColor="@color/color_332A7C"
+                                                android:textSize="@dimen/text_24"></TextView>
+
+                                            <TextView
+                                                android:id="@+id/rate_num"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignBottom="@id/rate_num_tv"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginLeft="@dimen/space_8"
+                                                android:layout_toRightOf="@id/rate_num_tv"
+                                                android:text="bpm"
+                                                android:textColor="@color/black"
+                                                android:textSize="@dimen/text_14"></TextView>
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+
+                                    <LinearLayout
+                                        android:id="@+id/re_sleep"
+                                        style="@style/home_fun_item_location"
+                                        android:onClick="@{fragment::onClick}"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:drawableLeft="@mipmap/icon_sleep_blue"
+                                            android:drawablePadding="@dimen/space_10"
+                                            android:text="睡眠"
+                                            android:textSize="@dimen/text_18"
+                                            android:textStyle="bold"></TextView>
+
+                                        <ImageView
+                                            android:layout_width="@dimen/space_100"
+                                            android:layout_height="@dimen/space_35"
+                                            android:layout_gravity="center"
+                                            android:src="@mipmap/icon_sleepnum_home"></ImageView>
+
+                                        <RelativeLayout
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/space_10">
+
+                                            <TextView
+                                                android:id="@+id/sleep_num_tv"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="--"
+                                                android:textColor="@color/color_332A7C"
+                                                android:textSize="@dimen/text_24"></TextView>
+
+                                            <TextView
+                                                android:id="@+id/sleep_num"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignBottom="@id/sleep_num_tv"
+                                                android:layout_marginLeft="@dimen/space_8"
+                                                android:layout_toRightOf="@id/sleep_num_tv"
+                                                android:text="bpm"
+                                                android:textColor="@color/black"
+                                                android:textSize="@dimen/text_14"
+                                                android:visibility="gone"></TextView>
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </ScrollView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

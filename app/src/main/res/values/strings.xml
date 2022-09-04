@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">暖心家园</string>
+
+    <string name="home_company_name">联通（上海）产业互联网有限公司</string>
+    <string name="company_name">中国联通</string>
+    <string name="please_wait">"加载中"</string>
+    <string name="network_error">网络错误，请稍后重试。</string>
+    <string name="network_time_out">网络连接超时，请检查网络</string>
+    <string name="request_json_parse_exception">JSON解析异常。</string>
+    <string name="server_exception_try_again_later">网络错误，请稍后重试。</string>
+
+    <string name="result_param_error">参数错误</string>
+    <string name="result_no_data">无数据</string>
+    <string name="result_db_error">数据库错误</string>
+    <string name="result_server_error">服务器链接异常，请检查网络</string>
+    <string name="result_phone_inexistence">手机号不存在</string>
+    <string name="result_login_failed">帐号或密码错误</string>
+    <string name="result_error_unknown">未知错误</string>
+
+    <string name="result_token_invalid">服务器繁忙，请稍后再试</string>
+
+    <!--系统提示-->
+    <string name="tip_reg_phone">请正确输入手机号或邮箱</string>
+    <string name="tip_reg_pwd">请再次输入密码</string>
+    <string name="tip_reg_re_pwd">请再次确认</string>
+    <string name="pwd_diffent">两次密码输入的不一样</string>
+
+    <string name="pwd_is_invalid">用户名或密码不正确！</string>
+
+    <string name="pwd_regulation">密码格式错误，请输入数字或字母格式，长度为6~15位的密码</string>
+
+    <string name="tip_login_phone">请正确输入手机号</string>
+    <string name="tip_login_pwd">请输入密码</string>
+    <string name="my_user">用户</string>
+    <string name="my_user_unsign">已签到</string>
+    <string name="my_user_sign">签到</string>
+    <string name="register"><b>注册账号</b></string>
+    <string name="forgetpwd"><b>忘记密码</b></string>
+    <string name="emptystr"> </string>
+    <string name="line"> - </string>
+    <string name="step">步</string>
+    <string name="minute">分钟</string>
+    <string name="bpm">(bpm)</string>
+    <string name="can_add_contact">可以添加以下联系人</string>
+    <string name="add_uragent_contact">添加紧急联系人</string>
+    <string name="add">添加</string>
+    <string name="add_contact">添加联系人</string>
+    <string name="input_please_phone">请输入手机号</string>
+    <string name="service">服务</string>
+    <string name="look_more">查看更多</string>
+    <string name="popular">热门</string>
+    <string name="broadband_reserve">宽带预约服务</string>
+    <string name="internet_service">互联网服务</string>
+    <string name="network_detection">网络检测服务</string>
+    <string name="rapidly">急速</string>
+    <string name="oldage_consult">养老数字设备办理咨询</string>
+    <string name="oldage_service_consult">养老服务咨询</string>
+    <string name="search_nearby_hall">请输入关键词搜索</string>
+    <string name="organization_details">机构详情</string>
+    <string name="connect_phone">联系电话：</string>
+    <string name="traffic_guide">交通指南</string>
+    <string name="drive_car">驾车</string>
+    <string name="drive_bus">公交</string>
+    <string name="organization_introduction">机构简介</string>
+    <string name="address">地址</string>
+    <string name="phone">电话</string>
+    <string name="expand">展开</string>
+    <string name="stay_tuned">敬请期待！</string>
+    <string name="organization_list">机构列表</string>
+    <string name="not_inRoom_dev">不在此房间的设备</string>
+    <string name="input_roomName">请输入您的房间名称</string>
+    <string name="add_childdev">添加子设备</string>
+    <string name="please_childDev_model">请确认子设备已处于配网模式（指示灯闪烁）</string>
+    <string name="add_devTip">若设备指示灯未闪烁，请先重置设备，以下是一些常见设备的重置方式：</string>
+    <string name="look_more_resetdev">查看更多设备重置方式 ></string>
+    <string name="instruct_flash">指示灯在快闪</string>
+    <string name="select_gateway_adddev">选择网关添加子设备</string>
+    <string name="please_selectgateway">请选择网关</string>
+    <string name="cancel">取消</string>
+    <string name="administrative_area">行政区</string>
+    <string name="features_sort">功能分类</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="commonly_used">常用</string>
+    <string name="commonly_used_apply">常用应用</string>
+    <string name="call_children">呼叫子女</string>
+    <string name="call_wife">呼叫老伴</string>
+    <string name="hot_line">暖心热线</string>
+    <string name="call_cars">呼叫车辆</string>
+
+    <string name="health_manager">健康管理</string>
+    <string name="drug_traceability">药品溯源</string>
+    <string name="health_data">健康数据</string>
+    <string name="health_msg">健康信息</string>
+    <string name="add_remind">添加提醒</string>
+
+    <string name="recommend">附近推荐</string>
+    <string name="community_center">社区中心</string>
+    <string name="house_keeper">家政</string>
+    <string name="utensil_rental">器具租赁</string>
+
+    <string name="reservate_service">服务预约</string>
+    <string name="broadband_service">宽带预约服务</string>
+    <string name="network_service">网络检测服务</string>
+    <string name="digital_device_service">养老数字设备咨询</string>
+    <string name="mobile_consulting_service">智能手机使用咨询</string>
+
+    <string name="device_manager">设备管理</string>
+    <string name="home_manager">家庭管理</string>
+    <string name="zoom_manager">房间管理</string>
+    <string name="living_room">客厅</string>
+    <string name="add_home">添加房间</string>
+    <string name="move_device">移除设备</string>
+
+    <string name="center_service">服务中心</string>
+
+    <string name="add_device_wifi_input_pwd">选择2.4Hz Wi-Fi 网络并输入密码</string>
+
+
+    <string name="location_mother">父母位置</string>
+    <string name="video_home">家中视频</string>
+    <string name="agreement1">中国联通认证服务协议&#038;《用户服务协议》</string>
+    <string name="agreement2">《隐私保护协议》</string>
+
+
+</resources>
