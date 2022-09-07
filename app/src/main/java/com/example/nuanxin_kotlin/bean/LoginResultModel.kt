@@ -8,5 +8,5 @@ package com.example.nuanxin_kotlin.bean
  */
 
 class LoginResultModel : BaseResultModel() {
-     var userInfo:UserInfo?=null
+     var data:UserInfo?=null
 }

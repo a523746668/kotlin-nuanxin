@@ -5,21 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.text.TextUtils
+import androidx.databinding.ViewDataBinding
 import com.example.nuanxin_kotlin.config.Constants
+import com.example.nuanxin_kotlin.databinding.ActivitySplashBinding
 import com.example.nuanxin_kotlin.util.SPUtils
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity() :BaseActivity<ActivitySplashBinding>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
          Handler().postDelayed({
             var token=SPUtils.getString(Constants.TOKEN_KEY)
             if(TextUtils.isEmpty(token)){
-                startActivity(Intent(this,MainActivity::class.java))
+                startActivity(Intent(this,LoginActivity::class.java))
             }else {
                 startActivity(Intent(this,MainActivity::class.java))
             }
               finish()
          },500)
+    }
+
+    override fun getLayoutId(): Int {
+        return R.layout.activity_splash
     }
 }

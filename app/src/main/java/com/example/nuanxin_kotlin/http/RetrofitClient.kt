@@ -1,10 +1,13 @@
 package com.example.nuanxin_kotlin.http
 
 import android.util.Log
+import com.example.nuanxin_kotlin.http.UrlConstant.BASE_URL
+import com.example.nuanxin_kotlin.http.intercept.HeaderInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.internal.platform.Platform
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.util.concurrent.TimeUnit
 import java.util.logging.Level
 
@@ -15,7 +18,7 @@ import java.util.logging.Level
  * @description：
  */
 private const val TIME_OUT_LENGTH = 8L
-private  val BASE_URL = "http://10.9.102.68:32647"
+
 object RetrofitClient {
 
 
@@ -31,6 +34,7 @@ object RetrofitClient {
                     Log.d("tmd", "request $code")
                 }
             }
+            .addInterceptor(HeaderInterceptor())
 //        initLoggingInterceptor()?.also {
 //            builder.addInterceptor(it)
 //        }
@@ -45,6 +49,9 @@ object RetrofitClient {
         .build()
 
     fun <T> create(serviceClass: Class<T>): T = retrofit.create(serviceClass)
+
+    val defaultService = retrofit.create(ServerInterface::class.java)
+
 
     inline fun <reified T> create(): T = create(T::class.java)
 

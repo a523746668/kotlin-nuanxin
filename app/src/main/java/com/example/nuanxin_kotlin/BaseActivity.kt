@@ -1,22 +1,21 @@
 package com.example.nuanxin_kotlin
 
 import android.os.Bundle
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 
 abstract  class BaseActivity<T: ViewDataBinding> : AppCompatActivity() {
-    protected  var  mDataBind :T?=null
 
+    lateinit var mBinding:T
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mDataBind=DataBindingUtil.setContentView(this,getLayout())
-        mDataBind?.lifecycleOwner=this
-        setContentView(mDataBind?.root)
+       // requestWindowFeature(Window.FEATURE_NO_TITLE)
+        supportActionBar?.hide()
+        mBinding = DataBindingUtil.setContentView<T>(this,getLayoutId())
     }
 
-
-
-    abstract fun getLayout(): Int
+    abstract fun getLayoutId(): Int
 
 }

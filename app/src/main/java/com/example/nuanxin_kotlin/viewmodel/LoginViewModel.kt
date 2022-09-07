@@ -26,7 +26,7 @@ class LoginViewModel : ViewModel() {
             var json = JsonObject()
             json.addProperty("phoneNumber", phone)
             json.addProperty("sendType", 2)
-            val result = RetrofitClient.create(ServerInterface::class.java).sendSmsCode(json)
+            val result = RetrofitClient.defaultService.sendSmsCode(json)
             codeResult.value = result!!
         }
     }
@@ -36,9 +36,10 @@ class LoginViewModel : ViewModel() {
             var json = JsonObject()
             json.addProperty("phoneNumber", phone)
             json.addProperty("password", password)
-            json.addProperty("smsCode", password)
+            json.addProperty("smsCode", code)
             val result = RetrofitClient.create(ServerInterface::class.java).login(json)
             loginResult.value = result!!
+
         }
     }
 }

@@ -7,6 +7,8 @@ package com.example.nuanxin_kotlin.bean
  * @description：
  */
 class UserInfo constructor(i: Int, s: String) {
+    constructor() : this(0,"")
+
     var token: String?=null
     var phoneNumber: String? = null
     var customerId: String? = null
