@@ -21,4 +21,10 @@ object Constants {
 
     val SP_CONFIG_NAME = "config"
 
+
+    const val TOKEN_INVALID = 1021 // token 失效
+
+    const val TOKEN_NONE = 9013 // token过期
+
+
 }

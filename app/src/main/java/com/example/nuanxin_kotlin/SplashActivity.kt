@@ -9,8 +9,9 @@ import androidx.databinding.ViewDataBinding
 import com.example.nuanxin_kotlin.config.Constants
 import com.example.nuanxin_kotlin.databinding.ActivitySplashBinding
 import com.example.nuanxin_kotlin.util.SPUtils
+import com.example.nuanxin_kotlin.viewmodel.BaseViewModel
 
-class SplashActivity() :BaseActivity<ActivitySplashBinding>() {
+class SplashActivity() :BaseActivity<ActivitySplashBinding,BaseViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
          Handler().postDelayed({

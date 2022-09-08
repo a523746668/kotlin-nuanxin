@@ -17,29 +17,30 @@ import kotlinx.coroutines.launch
  * @description：
  */
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel : BaseViewModel() {
     val codeResult=MutableLiveData<BaseResultModel>()
     val loginResult=MutableLiveData<LoginResultModel>()
 
     fun getSmsCode(phone: String) {
-        viewModelScope.launch {
+        launchForLoad {
             var json = JsonObject()
             json.addProperty("phoneNumber", phone)
             json.addProperty("sendType", 2)
             val result = RetrofitClient.defaultService.sendSmsCode(json)
             codeResult.value = result!!
+            result
         }
     }
 
     fun toLogin(phone: String,code:String,password:String) {
-        viewModelScope.launch {
+       launchForLoad {
             var json = JsonObject()
             json.addProperty("phoneNumber", phone)
             json.addProperty("password", password)
             json.addProperty("smsCode", code)
             val result = RetrofitClient.create(ServerInterface::class.java).login(json)
             loginResult.value = result!!
-
+            result
         }
     }
 }

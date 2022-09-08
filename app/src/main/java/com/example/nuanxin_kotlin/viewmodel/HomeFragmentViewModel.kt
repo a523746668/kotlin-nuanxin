@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nuanxin_kotlin.bean.BaseResultModel
 import com.example.nuanxin_kotlin.bean.home.BannerResultModel
+import com.example.nuanxin_kotlin.bean.home.HomeHealthModel
+import com.example.nuanxin_kotlin.bean.home.HomeWarnModel
 import com.example.nuanxin_kotlin.http.RetrofitClient
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
@@ -15,20 +17,16 @@ import kotlinx.coroutines.launch
  * @date: 2022/9/6
  * Description
  */
-class HomeFragmentViewModel :ViewModel() {
+class HomeFragmentViewModel :BaseViewModel() {
     val bannerResult= MutableLiveData<BannerResultModel?>()
-
+    val healthResult=MutableLiveData<HomeHealthModel>()
+    val remindResult=MutableLiveData<HomeWarnModel>()
     fun getBanner(){
-        val exception = CoroutineExceptionHandler { coroutineContext, throwable ->
-
-            Log.i("tmd",throwable.message!!)
+        launchForLoad {
+            val result=RetrofitClient.defaultService.getBannerList(0)
+            bannerResult.value=result
+            result!!
         }
-          viewModelScope.launch(exception){
-                  val result=RetrofitClient.defaultService.getBannerList(0)
-                  if(result!=null&&result.code==0){
-                      bannerResult.value=result
-                  }
-          }
     }
 
 }

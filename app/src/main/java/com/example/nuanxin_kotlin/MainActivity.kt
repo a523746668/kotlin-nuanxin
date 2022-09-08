@@ -10,8 +10,9 @@ import com.example.nuanxin_kotlin.databinding.ActivityMainBinding
 import com.example.nuanxin_kotlin.fragment.HomeFragment
 import com.example.nuanxin_kotlin.fragment.MyFragment
 import com.example.nuanxin_kotlin.fragment.ServiceFragment
+import com.example.nuanxin_kotlin.viewmodel.BaseViewModel
 
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseActivity<ActivityMainBinding,BaseViewModel>() {
     private var fragments: MutableList<Fragment> = mutableListOf()
 
 
