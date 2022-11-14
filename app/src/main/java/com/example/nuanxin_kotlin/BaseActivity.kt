@@ -17,18 +17,27 @@ import com.wang.avi.AVLoadingIndicatorView
 abstract  class BaseActivity<T: ViewDataBinding,VM:BaseViewModel> : AppCompatActivity() {
     private lateinit var loadingDialog: Dialog
     lateinit var mViewModel: VM
-    lateinit var mBinding:T
+    protected  lateinit var mBinding:T
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        // requestWindowFeature(Window.FEATURE_NO_TITLE)
         supportActionBar?.hide()
         mBinding = DataBindingUtil.setContentView<T>(this,getLayoutId())
         mBinding.lifecycleOwner=this
+        initActivity();
         createLoadingDialog()
-        initSomeObserver()
+
+        if(isInitObserver()){
+            initSomeObserver()
+        }
+
     }
 
+    abstract fun initActivity()
     abstract fun getLayoutId(): Int
+    open fun isInitObserver():Boolean{
+       return true
+    }
 
 
     fun initSomeObserver() {

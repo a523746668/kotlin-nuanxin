@@ -28,4 +28,12 @@ class SplashActivity() :BaseActivity<ActivitySplashBinding,BaseViewModel>() {
     override fun getLayoutId(): Int {
         return R.layout.activity_splash
     }
+
+    override fun isInitObserver(): Boolean {
+         return false
+    }
+
+    override fun initActivity() {
+
+    }
 }

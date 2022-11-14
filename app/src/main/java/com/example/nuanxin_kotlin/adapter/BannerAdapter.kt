@@ -20,7 +20,7 @@ class BannerAdapter :BaseBannerAdapter<BannerInfo>() {
         pageSize: Int
     ) {
             var imageView =holder!!.findViewById<ImageView>(R.id.banner_iv)
-             data!!.path?.let { GlideClient.loadImgWithUrl(it,imageView) }
+             data?.path?.let { GlideClient.loadImgWithUrl(it,imageView) }
     }
 
     override fun getLayoutId(viewType: Int): Int {

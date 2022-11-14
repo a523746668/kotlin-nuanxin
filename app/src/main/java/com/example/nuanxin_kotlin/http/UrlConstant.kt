@@ -6,8 +6,9 @@ package com.example.nuanxin_kotlin.http
  * Description
  */
 object UrlConstant {
-
-    val BASE_URL = "http://10.9.102.68:31947"
+    //http://10.9.102.68:31947
+       //  https://warmhome.10010sh.cn
+    val BASE_URL = "https://warmhome.10010sh.cn"
 
     val IMAGE_BASE_URL= BASE_URL+ "/member/member/resource/getImg?url=";
 }

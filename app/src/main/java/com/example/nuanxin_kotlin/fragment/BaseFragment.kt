@@ -22,6 +22,7 @@ import com.wang.avi.AVLoadingIndicatorView
  * @author: zhanghaifeng
  * @date: 2022/9/5
  * Description
+ *
  */
 abstract class BaseFragment<VH : ViewDataBinding, VM : BaseViewModel> : Fragment() {
     private lateinit var loadingDialog: Dialog

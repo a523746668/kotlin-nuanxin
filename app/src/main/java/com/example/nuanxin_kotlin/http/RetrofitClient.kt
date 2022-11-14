@@ -3,6 +3,7 @@ package com.example.nuanxin_kotlin.http
 import android.util.Log
 import com.example.nuanxin_kotlin.http.UrlConstant.BASE_URL
 import com.example.nuanxin_kotlin.http.intercept.HeaderInterceptor
+import com.example.nuanxin_kotlin.http.intercept.MyHttpLoggerIntercptor
 import okhttp3.OkHttpClient
 import okhttp3.internal.platform.Platform
 import retrofit2.Retrofit
@@ -35,6 +36,7 @@ object RetrofitClient {
                 }
             }
             .addInterceptor(HeaderInterceptor())
+            .addInterceptor(MyHttpLoggerIntercptor())
 //        initLoggingInterceptor()?.also {
 //            builder.addInterceptor(it)
 //        }

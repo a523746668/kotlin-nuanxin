@@ -17,14 +17,29 @@ import kotlinx.coroutines.launch
  * @date: 2022/9/6
  * Description
  */
-class HomeFragmentViewModel :BaseViewModel() {
-    val bannerResult= MutableLiveData<BannerResultModel?>()
-    val healthResult=MutableLiveData<HomeHealthModel>()
-    val remindResult=MutableLiveData<HomeWarnModel>()
-    fun getBanner(){
-        launchForLoad {
-            val result=RetrofitClient.defaultService.getBannerList(0)
-            bannerResult.value=result
+class HomeFragmentViewModel : BaseViewModel() {
+    val bannerResult = MutableLiveData<BannerResultModel?>()
+    val healthResult = MutableLiveData<HomeHealthModel>()
+    val remindResult = MutableLiveData<HomeWarnModel>()
+
+    fun getBanner() {
+        launchForEach {
+            val result = RetrofitClient.defaultService.getBannerList(0)
+            bannerResult.value = result
+            result!!
+        }
+    }
+
+
+    fun getHealthData() {
+
+    }
+
+
+    fun getRemindData() {
+        launchForEach {
+            val result = RetrofitClient.defaultService.getHomeWarnList()
+            remindResult.value = result
             result!!
         }
     }

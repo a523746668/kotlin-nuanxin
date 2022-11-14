@@ -54,5 +54,11 @@ class MainActivity : BaseActivity<ActivityMainBinding,BaseViewModel>() {
         return  R.layout.activity_main
     }
 
+    override fun isInitObserver(): Boolean {
+        return false
+    }
 
+    override fun initActivity() {
+
+    }
 }

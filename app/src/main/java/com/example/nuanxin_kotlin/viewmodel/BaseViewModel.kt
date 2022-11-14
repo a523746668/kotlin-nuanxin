@@ -39,13 +39,13 @@ abstract class BaseViewModel : ViewModel() {
     /*
        异步操作
      */
-    fun launchForEach(block: () -> Unit){
+    fun<T:BaseResultModel> launchForEach(block: suspend CoroutineScope.() -> T){
         val exception = CoroutineExceptionHandler { coroutineContext, throwable ->
             Log.i("tmd", throwable.message!!)
         }
         viewModelScope.launch(exception) {
-            block()
-            loadIngLiveData.value = false
+            var result= block()
+            checkResultLiveData.value=result
         }
     }
 }
