@@ -1,6 +1,7 @@
 package com.example.nuanxin_kotlin
 
 import android.os.Bundle
+import android.telephony.TelephonyManager
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -25,6 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding,BaseViewModel>() {
         mBinding.viewPage.setCurrentItem(0, false)
         initView();
         initEvent()
+
     }
 
     private fun initEvent() {
